@@ -2,11 +2,11 @@
 def welcome_statement():
 	# asks user if they want to play the game
 	print "Welcome to Automaton. Would you like to play a game about curiosity and information?"
-def Statements_A():
+def leading_statment():
 	#list of first part of statments that act as teasers to learn more
-def Statements_Z():
+def pair_to_leading_statement():
 	#list of corresponding answer statments
-def YouLose():
+def you_lose():
 	#list of versions of saying you lose
-def YouWin():
+def you_win():
 	#results of winning
