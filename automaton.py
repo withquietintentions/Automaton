@@ -28,8 +28,8 @@ def welcome_statement():
 		print "Ok bye"
 	else:
 		print "Please enter Y or N"
-def leading_statement(statements, question_number):
-	pass #prints question 1
+def leading_statement(statements, question_num):
+	print statements[question_num]["question1"]["synopsis"] #prints question 1
 def pair_to_leading_statement():
 	pass#list of corresponding answer statments
 def you_lose():
@@ -39,4 +39,5 @@ def you_win():
 
 welcome_statement()
 if leading_statement:
-	print statements_lose_version[0]["question1"]["synopsis"]
+	leading_statement(statements_lose_version,0)
+	
