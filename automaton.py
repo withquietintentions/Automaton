@@ -18,7 +18,7 @@ statements_lose_version = [
 	}} 
 ]
 
-
+score = 0
 def welcome_statement():
 	# asks user if they want to play the game
 	welcome_answer = raw_input ("Welcome to Automaton. Would you like to play a game about curiosity and information? Y/N")
@@ -33,11 +33,8 @@ def leading_statement(statements, question_num):
 	answer = raw_input (statements[question_num]["question"]["synopsis"])
 	if statements[question_num]["question"]["options"]:
 		print statements[question_num]["question"]["lose message"]
+		print "Your final score was: (%d)" %score
 
-def you_lose():
-	pass#list of versions of saying you lose
-def you_win():
-	pass#results of winning
 
 welcome_statement()
 if leading_statement:
