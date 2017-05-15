@@ -17,26 +17,42 @@ statements_lose_version = [
 		"lose message": "often exceedingly unfaithful to their origins. Their fathers, after all, are inessential - Donna Haraway A Cyborg Manifesto. All of humanity is doomed and you lose."
 	}} 
 ]
-
-score = 0
+total_questions = len(statements_lose_version)
+score = 0 #initial score
+question_num = 0 #question started on
+lets_play = True
 def welcome_statement():
-	# asks user if they want to play the game
+	"""Asks user if they want to play the game"""
 	welcome_answer = raw_input ("Welcome to Automaton. Would you like to play a game about curiosity and information? Y/N")
 	if welcome_answer.upper() == "Y" :
-		leading_statement = True 
-	elif raw_input.upper == "N":
+		print "lets play"
+	elif welcome_answer.upper() == "N":
 		print "Ok bye"
+		global lets_play 
+		lets_play= False
+		exit()
 	else:
+		global lets_play 
+		lets_play= False
 		print "Please enter Y or N"
+		
+		
 
 def leading_statement(statements, question_num):
+	"""Asks question and fields response"""
 	answer = raw_input (statements[question_num]["question"]["synopsis"])
 	if statements[question_num]["question"]["options"]:
 		print statements[question_num]["question"]["lose message"]
 		print "Your final score was: (%d)" %score
+		lets_play = False
+	else:
+		score += 1 #adds score when not losing
+		question_num += 1 # goes to next question
+		
 
 
 welcome_statement()
-if leading_statement:
-	leading_statement(statements_lose_version,0)
+while welcome_statement(): #and question_num <= total_questions:
+	leading_statement(statements_lose_version,question_num)
+
 	
