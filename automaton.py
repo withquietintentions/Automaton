@@ -19,31 +19,35 @@ statements_lose_version = [
 ]
 total_questions = len(statements_lose_version)
 score = 0 #initial score
-question_num = 0 #question started on
+question_number = 0 #question started on
 lets_play = True
 def welcome_statement():
 	"""Asks user if they want to play the game"""
 	welcome_answer = raw_input ("Welcome to Automaton. Would you like to play a game about curiosity and information? Y/N")
+	global lets_play 
 	if welcome_answer.upper() == "Y" :
 		print "lets play"
 	elif welcome_answer.upper() == "N":
 		print "Ok bye"
-		global lets_play 
 		lets_play= False
 		exit()
 	else:
-		global lets_play 
 		lets_play= False
 		print "Please enter Y or N"
-		
-		
+def leave_game_or_replay():
+	print "Try Again Soon"
+	exit()
+
+
 
 def leading_statement(statements, question_num):
 	"""Asks question and fields response"""
 	answer = raw_input (statements[question_num]["question"]["synopsis"])
+	global score
+	global lets_play
 	if statements[question_num]["question"]["options"]:
 		print statements[question_num]["question"]["lose message"]
-		print "Your final score was: (%d)" %score
+		print "Your final score was %d" %score
 		lets_play = False
 	else:
 		score += 1 #adds score when not losing
@@ -52,7 +56,9 @@ def leading_statement(statements, question_num):
 
 
 welcome_statement()
-while welcome_statement(): #and question_num <= total_questions:
-	leading_statement(statements_lose_version,question_num)
+while lets_play: #and question_num <= total_questions:
+	leading_statement(statements_lose_version,question_number)
+leave_game_or_replay()
+
 
 	
