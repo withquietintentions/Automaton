@@ -28,9 +28,9 @@ def welcome_statement():
 		print "Ok bye"
 	else:
 		print "Please enter Y or N"
+
 def leading_statement(statements, question_num):
-	print statements[question_num]["question"]["synopsis"] 
-	answer = raw_input("")
+	answer = raw_input (statements[question_num]["question"]["synopsis"])
 	if statements[question_num]["question"]["options"]:
 		print statements[question_num]["question"]["lose message"]
 
