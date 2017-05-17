@@ -1,12 +1,13 @@
 """In this game there is a hidden history of destruction. The goal is to find all hidden items and remove them. O
 Eventually you can also add to the list nice things. On the other side of the cube the game exists with the lists switchedso you add bad things and remove good ones"""
 #data
-sad_history_hidden_list =["bombs", "sadness", 'war', "cello"]
+sad_history_hidden_list =["bombs", "sadness", 'war', "trauma", "rape", "fear"]
 game_in_play = True
 
 def pop_search(sad_list, index):
 	sad_list.pop(index)
 	print what_user_wants_to_find +" has been removed from history"
+	print "%d items are left in history that need to be removed" %len(sad_list)
 
 def find_item_in_list(what_user_wants_to_find,sad_history_hidden_list):
 	if what_user_wants_to_find in sad_history_hidden_list:
