@@ -61,7 +61,7 @@ def main():
 	elif play == 2:
 		# ask question again
 	 else:
-	 	#exit game
+	 	# exit game
  
  
 ## look in lecture notes for this below
