@@ -7,6 +7,7 @@ question_num = 0 #question started on
 score= 0
 
 
+
 def welcome_statement(lets_play):
 	"""Asks user if they want to play the game"""
 	welcome_answer = raw_input ("Welcome to Automaton. Would you like to play a game about curiosity and information? Y/N ")
@@ -36,27 +37,32 @@ def repeat_question(lets_play):
 def leading_statement(statements,question_num,score):
 	"""Asks question and fields response"""
 	answer = raw_input (statements[question_num]["question"]["synopsis"]) # is a string
-	options = statements[question_num]["question"]["options"] #options is a list with a dictionary in it
+	options = statements[question_num]["question"]["options"] # options is a list with a dictionary in it
 	lose_message = statements[question_num]["question"]["lose_message"] # is a string
 
-	if answer not in options:
-		print "please type in one of the following: "
-		#for options in statements[question_num]["question"]["options"]:
-	if statements[question_num]["question"]["options"] == True:
-		print statements[question_num]["question"]["lose message"]
-		print "Your final score was %d" %score
-		lets_play == False
-		leave_game()
-	else:
-		score += 1 #adds score when not losing
-		question_num += 1 # goes to next question
+	for tupletest in options:
+		if answer in tupletest[1]:
+			#print "its in there" + tupletest[0]
+			#checks to see if in possible answers.
+			return tupletest[0]
+			if tupletest[0] == "YES":
+				print statements[question_num]["question"]["lose message"]
+				print "Your final score was %d" %score
+				lets_play == False
+				leave_game()
+			elif tupletest[0] == "NO":
+				score += 1 #adds score when not losing
+				question_num += 1 # goes to next question
+		else:
+			print "please type an understandable response"
+			#this could be expanded to print all the options in the lists in the tuples.
 	return score
 	
 
 
 def main():
 	"""
-	this is your driver 
+	this the your driver 
 	"""
 	lets_play = None
 	play = welcome_statement(lets_play)
@@ -67,7 +73,6 @@ def main():
 	else:
 	 	leave_game()
  
- 
-## look in lecture notes for this below
+ #runs the main function
 if __name__=='__main__':
 	main()
