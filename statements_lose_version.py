@@ -12,7 +12,7 @@ statements_lose_version = [
 	}}, 
 	{"question" : {
 		"synopsis": "The main trouble with cyborgs, of course , is that they are the illegitimate offspring of militarism and patriarchal capitalism...But illegitimate offspring are... Open Pandoras box to read the rest (open/No)",
-		"options": [("YES", ["Y"]), ("NO",["N"]) ],
+		"options": [("YES", ["open"]), ("NO",["No"]) ],
 		"lose_message": "often exceedingly unfaithful to their origins. Their fathers, after all, are inessential - Donna Haraway A Cyborg Manifesto. All of humanity is doomed and you lose."
 	}} 
 ]
